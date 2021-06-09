@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <title>
+
+        {% block title %}
+            Home
+        {% endblock %}
+
+    </title>
+
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+    {% endblock %}
+
+</head>
+
+<body>
+
+    {% block content %}
+
+    <div id = "homeHeading">
+        Login Page
+    </div>
+
+    <button id="clickMe">
+        Click Me To Change Heading
+    </button>
+
+    {% if sum %}
+        {{ sum }}
+    {% else %}
+    <form method="POST" style="padding-bottom: 2rem;">{% csrf_token %}
+
+        <div class="form-group">
+            <label for="exampleInput">Email</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" name="number1" aria-describedby="emailHelp" placeholder="Enter name">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your personal details with anyone else.</small>
+          </div>
+    
+        <div class="form-group">
+          <label for="exampleInputEmail1">Password</label>
+          <input type="password" class="form-control" id="exampleInputEmail1" name="number2" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <a href="/sign-up">
+    Click Me To Sign Up
+    </a>
+    <br>
+    
+    {{ message }}
+
+    {% endif %}
+
+
+
+
+    {% endblock %}
+    
+    <script src="{% static 'JS/home.js' %}"></script>
+
+</body>
+
+
+
+</html>

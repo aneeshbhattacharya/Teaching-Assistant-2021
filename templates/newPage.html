@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+{% load static %}
+
+
+{% block title %}
+New Page
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'CSS/newPage.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="nameOfPersonBeautify">
+    {{ nameOfPerson }}
+</div>
+
+
+{% endblock %}

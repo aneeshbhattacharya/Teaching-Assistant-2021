@@ -1,0 +1,48 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}
+    Sign Up
+{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center;">
+Sign Up Page
+</h1>
+
+<form method="POST" style="padding-bottom: 2rem;">{% csrf_token %}
+
+    <div class="form-group">
+        <label for="exampleInput">Email</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter name">
+       
+      </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Password</label>
+      <input type="password" class="form-control" id="exampleInputEmail1" name="password" aria-describedby="emailHelp" placeholder="Enter email">
+      
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Re-enter Password</label>
+        <input type="password" class="form-control" id="exampleInputEmail1" name="passwordVerif" aria-describedby="emailHelp" placeholder="Enter email">
+        
+      </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+</form>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
